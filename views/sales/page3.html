@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>page3</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="/assets_2/css/style.css">
+    <link rel="icon" type="image/x-icon" href="/assets_2/img/favicon.png" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets_2/owl.carousel.min.css"
+        integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets_2/owl.theme.default.min.css"
+        integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link href="https://fonts.cdnfonts.com/css/avenir-lt-pro" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/css/iziToast.min.css"
+        integrity="sha512-O03ntXoVqaGUTAeAmvQ2YSzkCvclZEcPQu1eqloPaHfJ5RuNGiS4l+3duaidD801P50J28EHyonCV06CUlTSag=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/js/iziToast.min.js"
+        integrity="sha512-Zq9o+E00xhhR/7vJ49mxFNJ0KQw1E1TMWkPTxrWcnpfEFDEXgUiwJHIKit93EW/XxE31HSI5GEOW06G6BF1AtA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <style>
+        html,
+        body {
+            overflow-x: hidden !important;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section>
+        <div class="container-fluid">
+            <div class="row g-0">
+                <div class="col-xxl-10 col-xl-11 col-md-12 col-12 mx-auto">
+                    <div class="row">
+                        <div class="col d-flex justify-content-center py-5">
+                            <img src="/assets_2/images/Layer_1.svg" class="img-fluid" alt="" srcset="">
+                        </div>
+                    </div>
+                    <div class="row">
+        
+                        <div class="col-md-6">
+                            <div class="row row-cols-xl-3 row-cols-2 custom-scrollbar custom-scrollbar g-3 overflow-y-scroll"
+                                style="max-height: 70vh;" id="subCategoryViewCard">
+        
+                                <!-- <div class="col">
+                                    <div class="card bg-dark py-3 px-4 rounded-4 h-100">
+                                        <div class="justify-content-center d-flex align-items-center">
+                                            <img src="/assets_2/images/cap-1.svg" class="img-fluid qk-small-card-image1"
+                                                alt="...">
+                                        </div>
+                                        <div class="text-center mt-2">
+                                            <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                                class="card-title stretched-link text-uppercase">Caps</a>
+                                        </div>
+                                    </div>
+                                </div> -->
+        
+                            </div>
+                        </div>
+        
+                        <div class="col-md-6 d-flex flex-column justify-content-between mt-md-0 mt-4" style="height: 75vh;">
+                            <div>
+                                <table class="table" id="qkTable">
+        
+                                    <thead class="table-title1">
+                                        <tr class="table-dark">
+                                            <th scope="col">
+                                                <p class="table-title1 mb-0">item#</p>
+                                            </th>
+                                            <th scope="col">
+                                                <p class="table-title1 mb-0">Description</p>
+                                            </th>
+                                            <th scope="col">
+                                                <p class="table-title1 mb-0">Units</p>
+                                            </th>
+                                            <th class="text-left" scope="col">
+                                                <p class="table-title1 mb-0">Amount</p>
+                                            </th>
+                                        </tr>
+                                    </thead>
+        
+                                    <tbody class="table-body" id="productCartTable"></tbody>
+        
+                                </table>
+                            </div>
+        
+                            <div class="bg-white">
+                                <div class="border-top bg-white  px-xl-4 px-3 pb-4 px-md-3">
+                                    <div class="row mt-4 bg-white">
+                                        <div class="col-md-6">
+                                            <p class="mb-0" id="totalAmount"></p>
+                                        </div>
+                                        <div class="col-md-6 text-end d-flex justify-content-end">
+                                            <button type="button" class="btn btn-secondary qk-back-btn text-white"
+                                                onclick="goBack();">Back</button>
+                                            <button type="button" onclick="logCartOnNext();"
+                                                class="btn btn-secondary qk-next-btn text-white ms-2" data-bs-toggle="modal"
+                                                data-bs-target="#userModel">Next</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+        
+        
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+
+        <!-- Button trigger modal -->
+
+        <!-- Sub Category Model Start -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header bg-black">
+                        <h1 class="qk-modal-title mb-0" id="subCategoryModelTitle">CAPS</h1>
+                    </div>
+                    <div class="modal-body  overflow-x-scroll">
+                        <table class="table border-black">
+                            <thead>
+                                <tr>
+                                    <th scope="col">
+                                        <p class="qk-modal-table-title mb-0">Item#</p>
+                                    </th>
+                                    <th scope="col" colspan="5">
+                                        <p class="qk-modal-table-title mb-0">Description</p>
+                                    </th>
+                                    <th scope="col">
+                                        <p class="qk-modal-table-title mb-0">Stock</p>
+                                    </th>
+
+                                    <th scope="col">
+                                        <p class="qk-modal-table-title mb-0">Amount </p>
+                                    </th>
+                                    <th scope="col">
+                                        <p class="qk-modal-table-title mb-0">Action</p>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody class="qk-modal-table-title" id="productListTable">
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+                    <div class="modal-footer border-0 mb-3 pt-0">
+                        <button type="button" class="btn qk-clear-btn" data-bs-dismiss="modal">CLEAR</button>
+                        <button type="button" class="btn qk-done-btn" data-bs-dismiss="modal">DONE</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Sub Category Model End -->
+
+        <!-- User Details Model Start -->
+        <div class="modal fade" id="userModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-md">
+                <div class="modal-content">
+                    <div class="modal-header bg-black">
+                        <h1 class="qk-modal-title mb-0" id="">Customer Details</h1>
+
+                    </div>
+
+                    <div class="modal-body  overflow-x-scroll">
+                        <div class="col-12">
+                            <div class="row">
+
+                                <div class="col-12 mb-4">
+                                    <label class="form-label">Customer Name</label>
+                                    <input class="form-control" placeholder="Customer Name" id="customer_name" />
+                                </div>
+
+                                <div class="col-12 mb-4">
+                                    <label class="form-label">Email Address</label>
+                                    <input class="form-control" placeholder="Email Address" id="email" />
+                                </div>
+
+                                <div class="col-12 mb-4">
+                                    <label class="form-label">Mobile Number</label>
+                                    <input class="form-control" placeholder="Mobile Number" id="phone" />
+                                </div>
+
+                                <div class="col-12 mb-4">
+                                    <label class="form-label">Address</label>
+                                    <input class="form-control" placeholder="Address" id="address" />
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer border-0 mb-3 pt-3">
+                        <button type="button" class="btn btn-warning text-white" data-bs-dismiss="modal">CLEAR</button>
+                        <button type="button" class="btn btn-primary" onclick="orderBillAdd();">Submit</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- User Details Model End -->
+
+    </section>
+
+
+    <!--- script start-->
+    <%- script_tags %>
+        <!--- script start-->
+
+        <script>
+
+            const urlParams = new URLSearchParams(window.location.search);
+            const categoryId = urlParams.get('categoryId');
+            const type = urlParams.get('typeId');
+
+            // Sub Category Load Function Start
+            function subCategoryList() {
+
+                $.ajax({
+                    url: '/api/v1/product_sub_category/sales-list',
+                    method: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify({
+                        "category": categoryId,
+                        "type": type
+                    }),
+                    success: function (data) {
+
+                        if (data.status === true || data.status === "true") {
+
+                            const node = data.data
+
+
+                            for (let i = 0; i < node.length; i++) {
+
+                                document.getElementById("subCategoryModelTitle").innerHTML = node[i].name;
+
+                                let number = i + 1;
+
+                                document.getElementById("subCategoryViewCard").innerHTML += `
+                                    
+                                    <div class="col" onclick="productListLoad('${node[i].id}', '${node[i].name}');">
+
+                                        <div class="card bg-dark py-3 px-4 rounded-4 h-100">
+                                            <div class="justify-content-center d-flex align-items-center">
+                                                <img src="${node[i].img_url}" class="img-fluid qk-small-card-image1"
+                                                    alt="...">
+                                            </div>
+                                            <div class="text-center mt-2">
+                                                <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                                    class="card-title stretched-link text-uppercase">${node[i].name}</a>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    `
+                            }
+
+                        } else {
+                            iziToast.error({
+                                title: 'Error',
+                                message: data.message,
+                            });
+                        }
+                    },
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        console.error('Error making the request:', textStatus, errorThrown);
+                        iziToast.error({
+                            title: 'Error',
+                            message: 'An error occurred while processing your request.',
+                        });
+                    }
+                });
+            }
+            subCategoryList()
+            // Sub Category Load Function End
+
+            // Product Load Function Start
+            function productListLoad(id, name) {
+                console.log("🚀 ~ productListLoad ~ id:", id)
+                
+            console.log("🚀 ~ productListLoad ~ name:", name)
+
+                document.getElementById("subCategoryModelTitle").innerHTML = name;
+
+                $.ajax({
+                    url: '/api/v1/product/sales-list',
+                    method: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify({
+                        "sub_category": id,
+                        "type": type
+                    }),
+                    success: function (data) {
+
+                        if (data.status === true || data.status === "true") {
+
+
+                            const node = data.data
+
+                            document.getElementById("productListTable").innerHTML = "";
+
+                            let attributeName = "";
+                            if (type == 1) {
+                                attributeName = "disabled";
+                            }
+
+                            for (let i = 0; i < node.length; i++) {
+
+                                let number = i + 1;
+
+                                if (node[i].stock > 0) {
+
+                                    document.getElementById("productListTable").innerHTML +=
+                                        `
+                                    <tr>
+                                        <th scope="row">
+                                            <p class="qk-modal-table-title mb-0">${node[i].product_id}</p> 
+                                        </th>
+                                        <td colspan="5">${node[i].name}</td>
+
+                                        <td>${node[i].stock}</td>
+                                        <td><input type="number" class="priceInput" value="${node[i].price}" ${attributeName}></td>
+                                        <td class="qk-add-btn-col">
+                                            <a type="button" class="btn qk-add-btn text-uppercase" onclick="addToCart('${node[i].id}', '${node[i].product_id}', '${node[i].name}', ${node[i].stock}, this);" >ADD to bucket</a>
+                                        </td>
+                                    </tr>
+                                `
+                                }
+                            }
+
+                        } else {
+                            iziToast.error({
+                                title: 'Error',
+                                message: data.message,
+                            });
+                        }
+                    },
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        console.error('Error making the request:', textStatus, errorThrown);
+                        iziToast.error({
+                            title: 'Error',
+                            message: 'An error occurred while processing your request.',
+                        });
+                    }
+                });
+            }
+            // Product Load Function End
+
+            // Add Cart Function Start
+            let cart = {};
+
+            function addToCart(id, product_id, name, stock, element) {
+                let price = element.parentElement.parentElement.getElementsByClassName("priceInput")[0].value
+                cart[product_id] = cart[product_id] || { id, product_id, name, quantity: 0, price };
+
+                cart[product_id].quantity = Math.min(cart[product_id].quantity + 1, 10);
+
+                updateCartDisplay();
+                alertTotalAmount();
+            }
+
+            function logCartDetails() {
+
+                console.log(cart);
+
+                test(cart);
+            }
+
+            function updateCartDisplay() {
+                const cartTable = document.getElementById("productCartTable");
+                cartTable.innerHTML = "";
+
+                for (const key in cart) {
+                    const item = cart[key];
+                    const totalPrice = item.quantity * item.price;
+
+                    if (item.quantity > 0) {
+                        cartTable.innerHTML += `
+                        <tr>
+                            <th scope="row">
+                                <p class="mb-0">${item.product_id}</p>
+                            </th>
+                            <td>${item.name}</td>
+                            <td>
+                                <p class="qty d-flex mb-0">
+                                    <button type="button" class="qtyminus btn border-0 p-0 units-buttons-size" aria-hidden="true" onclick="updateQuantity('${item.product_id}', 'minus')"><img src="/assets_2/images/carbon_subtract-filled.svg" class="img-fluid" alt=""></button>
+                                    <input class="text-center qtyminus-input border-0 units-form-size" type="number" name="qty" id="qty${item.product_id}" min="1" max="10" step="1" value="${item.quantity}" id="qty">
+                                    <button type="button" class="qtyplus btn border-0 p-0 units-buttons-size" aria-hidden="true" onclick="updateQuantity('${item.product_id}', 'plus')"><img src="/assets_2/images/carbon_add-filled.svg" class="img-fluid" alt=""></button>
+                                </p>
+                            </td>
+                            <td class="text-left">${totalPrice}</td>
+                        </tr>`;
+                    } else {
+                        delete cart[key];
+                    }
+                }
+            }
+
+            function alertTotalAmount() {
+                let totalAmount = Object.values(cart).reduce((total, item) => total + item.quantity * item.price, 0);
+                document.getElementById("totalAmount").innerHTML = "LKR &nbsp;" + totalAmount;
+            }
+
+            function updateQuantity(productId, action) {
+                if (cart[productId]) {
+                    cart[productId].quantity = action === 'plus' ? Math.min(cart[productId].quantity + 1, 100000000) : Math.max(cart[productId].quantity - 1, 0);
+                    updateCartDisplay();
+                    alertTotalAmount();
+                    logCartDetails();
+                }
+            }
+
+            function logCartOnNext() {
+                logCartDetails();
+            }
+            // Add Cart Function End
+
+
+
+            // Order Bill Data Function Start
+            function orderBillAdd() {
+
+                const currentDate = new Date();
+                const year = currentDate.getFullYear();
+                const month = String(currentDate.getMonth() + 1).padStart(2, '0');
+                const day = String(currentDate.getDate()).padStart(2, '0');
+
+                const formattedDate = `${year}-${month}-${day}`;
+
+                $.ajax({
+                    url: '/api/v1/order_bill/add',
+                    method: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify({
+
+                        "date": formattedDate,
+                        "customerName": $('#customer_name').val(),
+                        "email": $('#email').val(),
+                        "phone": $('#phone').val(),
+                        "address": $('#address').val(),
+                        "items": Object.values(cart)
+
+                    }),
+                    success: function (data) {
+
+                        if (data.status === true || data.status === "true") {
+
+                            // orderItemAdd(data.data.insertId);
+
+                            iziToast.success({
+                                title: 'Success',
+                                message: data.message,
+                            });
+
+                            setTimeout(() => { location.href = '' }, 1000)
+
+
+                        } else {
+
+                            iziToast.error({
+                                title: 'Error',
+                                message: data.message,
+                            });
+                        }
+                    },
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        console.error('Error making the request:', textStatus, errorThrown);
+                        iziToast.error({
+                            title: 'Error',
+                            message: 'An error occurred while processing your request.',
+                        });
+                    }
+                });
+            }
+            // Order Bill Data Function End
+
+
+            function test(cart) {
+
+                // alert(cart.length);
+
+            }
+
+
+            // Order Item Add Function Start
+            function orderItemAdd(id) {
+
+                for (var x; cart.length > 0; x++) {
+
+                    $.ajax({
+                        url: '/api/v1/order_item/add',
+                        method: 'POST',
+                        contentType: 'application/json',
+                        data: JSON.stringify({
+
+                            "orderId": id,
+                            "product": cart[i].name,
+                            "price": cart[i].price,
+                            "qty": cart[i].quantity,
+
+
+                        }),
+                        success: function (data) {
+
+                            if (data.status === true || data.status === "true") {
+
+                                alert(data.data.insertId);
+
+                                iziToast.success({
+                                    title: 'Success',
+                                    message: data.message,
+                                });
+
+
+                            } else {
+
+                                iziToast.error({
+                                    title: 'Error',
+                                    message: data.message,
+                                });
+                            }
+                        },
+                        error: function (jqXHR, textStatus, errorThrown) {
+                            console.error('Error making the request:', textStatus, errorThrown);
+                            iziToast.error({
+                                title: 'Error',
+                                message: 'An error occurred while processing your request.',
+                            });
+                        }
+                    });
+                }
+
+            }
+            // Order Item Add Function End
+
+
+            function goBack() {
+
+                const currentUrl = window.location.href;
+                const urlParams = new URLSearchParams(new URL(currentUrl).search);
+                const typeId = urlParams.get("typeId");
+
+                location.href = `/page2/?typeId=${typeId}`
+            }
+
+
+        </script>
+
+
+</body>
+
+</html>

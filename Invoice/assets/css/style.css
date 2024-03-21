@@ -1,0 +1,53 @@
+* {
+    font-size: 14px !important;
+    font-family: Arial;
+}
+
+.table-header {
+    font-weight: 300;
+    padding: 5px;
+    border: 2px solid white;
+}
+
+.input-type-1 {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid black;
+    padding: 0px
+}
+
+.footer-color-box {
+    background-color: rgb(184, 180, 180);
+}
+
+.font-size-22 {
+    font-size: 22px;
+}
+
+.font-size-18 {
+    font-size: 18px;
+}
+
+.font-size-16 {
+    font-size: 16px;
+}
+
+.font-size-14 {
+    font-size: 14px;
+}
+
+.font-weight {
+    font-weight: 700;
+}
+
+.table-header {
+    background-color: black;
+}
+
+.margin-top-80 {
+    margin-top: 80px;
+}
+
+.input-type-1:active {
+    border: none;
+}

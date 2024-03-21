@@ -1,0 +1,280 @@
+/* ========================================================================== Author: Description: Date: ========================================================================== */
+/* 
+1. common css styles
+1.1 Buttons
+
+ ========================================================================== */
+/* 1. common css styles ========================================================================== */
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.body {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+
+/* .other-components-scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.other-components-scrollbar-hide {
+  -ms-overflow-style: none;
+ 
+  scrollbar-width: none;
+ 
+} */
+
+
+
+
+.custom-scrollbar {
+  /* Set the width of the scrollbar */
+  scrollbar-width: thin;
+  scrollbar-color: rgb(255, 255, 255) #D9D9D9;
+
+
+  /* For WebKit-based browsers (like Chrome and Safari) */
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border: 2px solid #D9D9D9;
+
+
+
+
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: #D9D9D9;
+
+  }
+}
+
+
+
+
+
+/* 1.1 common Text styles start========================================================================== */
+
+
+
+
+
+a.card-title {
+  font-size: 20px;
+  font-weight: 300;
+  color: #ffffff;
+  font-family: 'Avenir LT Pro', sans-serif;
+  text-decoration: none;
+
+}
+
+a.small-card-title {
+  font-size: 24px;
+  font-weight: 300;
+  color: #ffffff;
+  font-family: 'Avenir LT Pro', sans-serif;
+  text-decoration: none;
+
+}
+
+
+.table-title1 {
+  font-size: 20px;
+  font-weight: 100;
+  color: #ffffff;
+  font-family: 'Avenir LT Pro', sans-serif;
+
+}
+
+.qk-modal-title {
+  font-size: 24px;
+  font-weight: 500;
+  color: #ffffff;
+  font-family: 'Avenir LT Pro', sans-serif;
+}
+
+.qk-modal-table-title {
+  font-size: 24px;
+  font-weight: 300;
+  color: #000000;
+  font-family: 'Avenir LT Pro', sans-serif;
+}
+
+.qk-main-table-subtitle {
+  font-size: 16px;
+  font-weight: 300;
+  color: #000000;
+  font-family: 'Avenir LT Pro', sans-serif;
+}
+
+.table-body {
+  font-size: 20px !important;
+  font-weight: 300;
+  color: #000000;
+  font-family: 'Avenir LT Pro', sans-serif;
+}
+
+/* 1.1 common Text styles end========================================================================== */
+
+.qk-card-image1 {
+  width: 118px;
+}
+
+
+.qk-small-card-image1 {
+  width: 68px;
+}
+
+
+.qk-back-btn {
+  background-color: #9fa6b2;
+  font-size: 14px;
+  font-weight: 350;
+  padding: 10px 35px 10px 35px;
+  border-radius: 4px;
+  border-width: 0px;
+}
+
+.qk-back-btn:hover {
+  background-color: #c0c0c0;
+}
+
+.btn.qk-back-btn:active {
+  background-color: #9b9b9b;
+}
+
+
+
+.qk-next-btn {
+  background-color: #2d2e2c;
+  font-size: 14px;
+  font-weight: 350;
+  padding: 10px 35px 10px 35px;
+  border-radius: 4px;
+}
+
+.qk-next-btn:hover {
+  background-color: #494b48;
+}
+
+
+
+.qk-add-btn {
+  font-size: 24px;
+  font-weight: 300;
+  color: #ffffff;
+  font-family: 'Avenir LT Pro', sans-serif;
+  background-color: #000000;
+  min-width: 216px;
+}
+
+.qk-add-btn-col {
+  width: 22%;
+}
+
+.btn.qk-add-btn:hover {
+  font-size: 24px;
+  font-weight: 300;
+  color: #ffffff;
+  font-family: 'Avenir LT Pro', sans-serif;
+  background-color: #000000;
+
+}
+
+
+.qk-done-btn {
+  font-size: 24px;
+  font-weight: 300;
+  color: #ffffff;
+  font-family: 'Avenir LT Pro', sans-serif;
+  width: 216px;
+  background-color: #2B34FF;
+
+
+}
+
+
+.btn.qk-done-btn:hover {
+  font-size: 24px;
+  font-weight: 300;
+  color: #ffffff;
+  font-family: 'Avenir LT Pro', sans-serif;
+  width: 216px;
+  background-color: #2B34FF;
+
+
+}
+
+
+.qk-clear-btn {
+  font-size: 24px;
+  font-weight: 300;
+  color: #ffffff;
+  font-family: 'Avenir LT Pro', sans-serif;
+  width: 216px;
+  background-color: #A00000;
+
+}
+
+
+.btn.qk-clear-btn:hover {
+  font-size: 24px;
+  font-weight: 300;
+  color: #ffffff;
+  font-family: 'Avenir LT Pro', sans-serif;
+  width: 216px;
+  background-color: #A00000;
+
+}
+
+#qkTable .qk-modal-table-title tr {
+  border-bottom: 1px solid #212529;
+  /* Replace #212529 with the color you prefer */
+}
+
+
+
+.units-form-size {
+  width: 35px;
+  /* font-size: 16px; */
+  font-weight: 300;
+  color: #000000;
+  font-family: 'Avenir LT Pro', sans-serif;
+}
+
+
+.units-buttons-size {
+  width: 16px;
+}
+
+#totalAmount {
+  font-weight: 600;
+  font-size: 24px;
+}
+
+.text-left {
+  text-align: right !important;
+}
+
+.priceInput {
+  width: 150px !important;
+}
+
+
+/* .modal {
+
+  --bs-modal-width: 95%;
+  
+} */
