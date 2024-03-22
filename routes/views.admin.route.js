@@ -14,6 +14,7 @@ const { sidebar } = require("../views/components/sidebar");
 const { top_header } = require("../views/components/top_header");
 
 const {render_data_post, render_data} = require("./../services/render");
+const {authorize} = require("./../services/authorize");
 
 const dotenv = require('dotenv');
 dotenv.config({ path: '.env/config.env' });
