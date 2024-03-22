@@ -100,67 +100,8 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
         <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
         <script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
-        
+
             <script>
-
-                function productList() {
-
-                    $.ajax({
-                        url: '/api/v1/product/list',
-                        method: 'POST',
-                        contentType: 'application/json',
-                        data: {},
-                        success: function (data) {
-                            if (data.status === true || data.status === "true") {
-
-                                const node = data.data
-                                console.log("🚀 ~ file: gift-voucher-list.html:99 ~ productList ~ node:", node)
-
-                                document.getElementById("productListTable").innerHTML = ""
-
-                                for (let i = 0; i < node.length; i++) {
-                                    let number = i + 1;
-
-                                    // <td>${node[i].type_name}</td>
-
-                                    document.getElementById("productListTable").innerHTML += `
-                                        <tr>
-                                            <td>0${number}</td>
-                                            <td>${node[i].product_id}</td>
-                                            <td>${node[i].name}</td>
-                                            <td>${node[i].color}</td>
-                                            <td>${node[i].size}</td>
-                                            <td>${node[i].stock}</td>
-                                            <td>LKR ${node[i].price}</td>   
-                                            <td>${node[i].category_name}</td>
-                                            <td>${node[i].sub_category_name}</td>
-                                            <td class="text-end">
-                                                <a href="/product-edit/${node[i].id}" class="btn btn-warning btn-sm"><i class="fa-regular fa-pen-to-square"></i></a>
-                                                <a onclick="deleteData('${node[i].id}')" class="btn btn-danger btn-sm"><i class="fa-regular fa-trash-can"></i></a>
-                                            </td>
-                                        </tr>
-                                `
-                                }
-
-                            } else {
-
-                                iziToast.error({
-                                    title: 'Error',
-                                    message: data.message,
-                                });
-                            }
-                        },
-                        error: function (jqXHR, textStatus, errorThrown) {
-                            console.error('Error making the request:', textStatus, errorThrown);
-                            iziToast.error({
-                                title: 'Error',
-                                message: 'An error occurred while processing your request.',
-                            });
-                        }
-                    });
-                }
-
-                productList()
 
                 function deleteData(resultId) {
                     iziToast.show({
