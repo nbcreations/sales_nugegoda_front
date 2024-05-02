@@ -2,6 +2,7 @@ const script_tags = `
 <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
     crossorigin="anonymous"></script>
+<script src="/assets/js/bootstrap.bundle.min.js"></script>
 <script src="/assets/js/scripts.js"></script>
 <script src="/assets/js/bootstrap.bundle.js"></script>
 <script src="/assets/js/bootstrap.bundle.min.js"></script>
