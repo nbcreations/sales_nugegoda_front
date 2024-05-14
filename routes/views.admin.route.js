@@ -77,10 +77,15 @@ router.get("/product", authorize, async (req, res) => {
 });
 
 
-router.get("/orders", async (req, res) => {
+router.get("/orders", authorize, async (req, res) => {
 
     try {
-
+        let order_bill = await render_data("/api/v1/order_bill/list", req.authToken);
+        console.log("🚀 ~ router.get ~ order_bill:", order_bill)
+        if(!order_bill.status){
+            res.redirect("/");
+            return;
+        }
         res.render(
             admin + "orders.html",
             {
@@ -88,6 +93,7 @@ router.get("/orders", async (req, res) => {
                 script_tags: script_tags,
                 top_header: top_header,
                 sidebar: sidebar,
+                order_bill: order_bill.data
             }
         );
 

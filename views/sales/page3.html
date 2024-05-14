@@ -5,17 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>page3</title>
-    
+
     <link rel="stylesheet" href="/assets_2/css/style.css">
     <link rel="icon" type="image/x-icon" href="/assets_2/img/favicon.png" />
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets_2/owl.carousel.min.css"
-        integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets_2/owl.theme.default.min.css"
-        integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link href="https://fonts.cdnfonts.com/css/avenir-lt-pro" rel="stylesheet">
 
@@ -49,11 +41,11 @@
                         </div>
                     </div>
                     <div class="row">
-        
+
                         <div class="col-md-6">
                             <div class="row row-cols-xl-3 row-cols-2 custom-scrollbar custom-scrollbar g-3 overflow-y-scroll"
                                 style="max-height: 70vh;" id="subCategoryViewCard">
-        
+
                                 <!-- <div class="col">
                                     <div class="card bg-dark py-3 px-4 rounded-4 h-100">
                                         <div class="justify-content-center d-flex align-items-center">
@@ -66,14 +58,15 @@
                                         </div>
                                     </div>
                                 </div> -->
-        
+
                             </div>
                         </div>
-        
-                        <div class="col-md-6 d-flex flex-column justify-content-between mt-md-0 mt-4" style="height: 75vh;">
+
+                        <div class="col-md-6 d-flex flex-column justify-content-between mt-md-0 mt-4"
+                            style="height: 75vh;">
                             <div>
                                 <table class="table" id="qkTable">
-        
+
                                     <thead class="table-title1">
                                         <tr class="table-dark">
                                             <th scope="col">
@@ -90,12 +83,12 @@
                                             </th>
                                         </tr>
                                     </thead>
-        
+
                                     <tbody class="table-body" id="productCartTable"></tbody>
-        
+
                                 </table>
                             </div>
-        
+
                             <div class="bg-white">
                                 <div class="border-top bg-white  px-xl-4 px-3 pb-4 px-md-3">
                                     <div class="row mt-4 bg-white">
@@ -106,19 +99,19 @@
                                             <button type="button" class="btn btn-secondary qk-back-btn text-white"
                                                 onclick="goBack();">Back</button>
                                             <button type="button" onclick="logCartOnNext();"
-                                                class="btn btn-secondary qk-next-btn text-white ms-2" data-bs-toggle="modal"
-                                                data-bs-target="#userModel">Next</button>
+                                                class="btn btn-secondary qk-next-btn text-white ms-2"
+                                                data-bs-toggle="modal" data-bs-target="#userModel">Next</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-        
-        
+
+
                         </div>
                     </div>
                 </div>
             </div>
-            
+
         </div>
 
 
@@ -161,8 +154,8 @@
 
                     </div>
                     <div class="modal-footer border-0 mb-3 pt-0">
-                        <button type="button" class="btn qk-clear-btn" data-bs-dismiss="modal">CLEAR</button>
-                        <button type="button" class="btn qk-done-btn" data-bs-dismiss="modal">DONE</button>
+                        <button type="button" class="btn btn-danger qk-clear-btn" data-bs-dismiss="modal">CLEAR</button>
+                        <button type="button" class="btn btn-primary qk-done-btn" data-bs-dismiss="modal">DONE</button>
                     </div>
                 </div>
             </div>
@@ -187,7 +180,7 @@
                                     <input class="form-control" placeholder="Customer Name" id="customer_name" />
                                 </div>
 
-                                <div class="col-12 mb-4">
+                                <div class="col-12 mb-4 d-none">
                                     <label class="form-label">Email Address</label>
                                     <input class="form-control" placeholder="Email Address" id="email" />
                                 </div>
@@ -293,9 +286,6 @@
 
             // Product Load Function Start
             function productListLoad(id, name) {
-                console.log("🚀 ~ productListLoad ~ id:", id)
-                
-            console.log("🚀 ~ productListLoad ~ name:", name)
 
                 document.getElementById("subCategoryModelTitle").innerHTML = name;
 
@@ -338,7 +328,7 @@
                                         <td>${node[i].stock}</td>
                                         <td><input type="number" class="priceInput" value="${node[i].price}" ${attributeName}></td>
                                         <td class="qk-add-btn-col">
-                                            <a type="button" class="btn qk-add-btn text-uppercase" onclick="addToCart('${node[i].id}', '${node[i].product_id}', '${node[i].name}', ${node[i].stock}, this);" >ADD to bucket</a>
+                                            <a type="button" class="btn btn-dark text-uppercase" onclick="addToCart('${node[i].id}', '${node[i].product_id}', '${node[i].name}', ${node[i].stock}, this);" >ADD to bucket</a>
                                         </td>
                                     </tr>
                                 `
@@ -443,6 +433,17 @@
                 const day = String(currentDate.getDate()).padStart(2, '0');
 
                 const formattedDate = `${year}-${month}-${day}`;
+
+                console.log(Object.values(cart).length);
+
+                if (Object.values(cart).length == 0) {
+                    iziToast.error({
+                        title: 'Error',
+                        message: "Please select at least one item",
+                    });
+
+                    return
+                }
 
                 $.ajax({
                     url: '/api/v1/order_bill/add',

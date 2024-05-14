@@ -206,7 +206,7 @@ a.small-card-title {
 }
 
 
-.btn.qk-done-btn:hover {
+/* .btn.qk-done-btn:hover {
   font-size: 24px;
   font-weight: 300;
   color: #ffffff;
@@ -215,7 +215,7 @@ a.small-card-title {
   background-color: #2B34FF;
 
 
-}
+} */
 
 
 .qk-clear-btn {
@@ -229,7 +229,7 @@ a.small-card-title {
 }
 
 
-.btn.qk-clear-btn:hover {
+/* .btn.qk-clear-btn:hover {
   font-size: 24px;
   font-weight: 300;
   color: #ffffff;
@@ -237,7 +237,7 @@ a.small-card-title {
   width: 216px;
   background-color: #A00000;
 
-}
+} */
 
 #qkTable .qk-modal-table-title tr {
   border-bottom: 1px solid #212529;
