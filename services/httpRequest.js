@@ -45,7 +45,6 @@ const post = async (url, data, token) => {
   
 
 const get = async (url, token) => {
-  console.log(token)
   return new Promise((resolve, reject) => {
       axios.get(url, {
           headers: {

@@ -47,7 +47,6 @@ router.get("/", async (req, res) => {
 
 });
 
-
 router.get("/product", authorize, async (req, res) => {
 
     try {
@@ -56,13 +55,18 @@ router.get("/product", authorize, async (req, res) => {
             res.redirect("/");
             return;
         }
+
+        let sidebar_menu = await sidebar({
+            role: req.role
+        });
+
         res.render(
             admin + "product-list.html",
             {
                 header_tags: header_tags,
                 script_tags: script_tags,
                 top_header: top_header,
-                sidebar: sidebar,
+                sidebar: sidebar_menu,
                 data: data.data
             }
         );
@@ -76,23 +80,27 @@ router.get("/product", authorize, async (req, res) => {
 
 });
 
-
 router.get("/orders", authorize, async (req, res) => {
 
     try {
         let order_bill = await render_data("/api/v1/order_bill/list", req.authToken);
-        console.log("🚀 ~ router.get ~ order_bill:", order_bill)
+
         if(!order_bill.status){
             res.redirect("/");
             return;
         }
+
+        let sidebar_menu = await sidebar({
+            role: req.role
+        });
+
         res.render(
             admin + "orders.html",
             {
                 header_tags: header_tags,
                 script_tags: script_tags,
                 top_header: top_header,
-                sidebar: sidebar,
+                sidebar: sidebar_menu,
                 order_bill: order_bill.data
             }
         );
@@ -105,7 +113,6 @@ router.get("/orders", authorize, async (req, res) => {
     }
 
 });
-
 
 router.get("/order-bill/:id", async (req, res) => {
 
@@ -130,13 +137,17 @@ router.get("/product-add", async (req, res) => {
 
     try {
 
+        let sidebar_menu = await sidebar({
+            role: req.role
+        });
+
         res.render(
             admin + "product-add.html",
             {
                 header_tags: header_tags,
                 script_tags: script_tags,
                 top_header: top_header,
-                sidebar: sidebar,
+                sidebar: sidebar_menu,
             }
         );
 
@@ -153,13 +164,17 @@ router.get("/product-edit/:id", async (req, res) => {
 
     try {
 
+        let sidebar_menu = await sidebar({
+            role: req.role
+        });
+
         res.render(
             admin + "product-edit.html",
             {
                 header_tags: header_tags,
                 script_tags: script_tags,
                 top_header: top_header,
-                sidebar: sidebar,
+                sidebar: sidebar_menu,
             }
         );
 
@@ -172,10 +187,13 @@ router.get("/product-edit/:id", async (req, res) => {
 
 });
 
-
 router.get("/sub-category-add", async (req, res) => {
 
     try {
+
+        let sidebar_menu = await sidebar({
+            role: req.role
+        });
 
         res.render(
             admin + "product-sub-category-add.html",
@@ -183,7 +201,142 @@ router.get("/sub-category-add", async (req, res) => {
                 header_tags: header_tags,
                 script_tags: script_tags,
                 top_header: top_header,
-                sidebar: sidebar,
+                sidebar: sidebar_menu,
+            }
+        );
+
+    } catch (err) {
+        console.log(err);
+        res.render(
+            global + "500.html"
+        );
+    }
+
+});
+
+router.get("/product-price", async (req, res) => {
+
+    try {
+
+        let sidebar_menu = await sidebar({
+            role: req.role
+        });
+
+        res.render(
+            admin + "product-price.html",
+            {
+                header_tags: header_tags,
+                script_tags: script_tags,
+                top_header: top_header,
+                sidebar: sidebar_menu,
+            }
+        );
+
+    } catch (err) {
+        console.log(err);
+        res.render(
+            global + "500.html"
+        );
+    }
+
+});
+
+router.get("/bank-management", async (req, res) => {
+
+    try {
+
+        let sidebar_menu = await sidebar({
+            role: req.role
+        });
+
+        res.render(
+            admin + "bank-management.html",
+            {
+                header_tags: header_tags,
+                script_tags: script_tags,
+                top_header: top_header,
+                sidebar: sidebar_menu,
+            }
+        );
+
+    } catch (err) {
+        console.log(err);
+        res.render(
+            global + "500.html"
+        );
+    }
+
+});
+
+router.get("/card-discount-add", async (req, res) => {
+
+    try {
+
+        let sidebar_menu = await sidebar({
+            role: req.role
+        });
+
+        res.render(
+            admin + "card-discount-add.html",
+            {
+                header_tags: header_tags,
+                script_tags: script_tags,
+                top_header: top_header,
+                sidebar: sidebar_menu,
+            }
+        );
+
+    } catch (err) {
+        console.log(err);
+        res.render(
+            global + "500.html"
+        );
+    }
+
+});
+
+router.get("/card-discount-list", async (req, res) => {
+
+    try {
+
+        let sidebar_menu = await sidebar({
+            role: req.role
+        });
+
+        res.render(
+            admin + "card-discount-list.html",
+            {
+                header_tags: header_tags,
+                script_tags: script_tags,
+                top_header: top_header,
+                sidebar: sidebar_menu,
+            }
+        );
+
+    } catch (err) {
+        console.log(err);
+        res.render(
+            global + "500.html"
+        );
+    }
+
+});
+
+router.get("/card-discount-edit/:id", async (req, res) => {
+
+    try {
+
+        let sidebar_menu = await sidebar({
+            role: req.role
+        });
+
+        res.render(
+            admin + "card-discount-edit.html",
+            {
+                header_tags: header_tags,
+                script_tags: script_tags,
+                top_header: top_header,
+                sidebar: sidebar_menu,
             }
         );
 
@@ -200,13 +353,17 @@ router.get("/sub-category-list", async (req, res) => {
 
     try {
 
+        let sidebar_menu = await sidebar({
+            role: req.role
+        });
+
         res.render(
             admin + "product-sub-category-list.html",
             {
                 header_tags: header_tags,
                 script_tags: script_tags,
                 top_header: top_header,
-                sidebar: sidebar,
+                sidebar: sidebar_menu,
             }
         );
 
@@ -223,13 +380,17 @@ router.get("/sub-category-edit/:id", async (req, res) => {
 
     try {
 
+        let sidebar_menu = await sidebar({
+            role: req.role
+        });
+
         res.render(
             admin + "product-sub-category-edit.html",
             {
                 header_tags: header_tags,
                 script_tags: script_tags,
                 top_header: top_header,
-                sidebar: sidebar,
+                sidebar: sidebar_menu,
             }
         );
 
@@ -246,13 +407,17 @@ router.get("/order-payment", async (req, res) => {
 
     try {
 
+        let sidebar_menu = await sidebar({
+            role: req.role
+        });
+
         res.render(
             admin + "order-payment.html",
             {
                 header_tags: header_tags,
                 script_tags: script_tags,
                 top_header: top_header,
-                sidebar: sidebar,
+                sidebar: sidebar_menu,
             }
         );
 

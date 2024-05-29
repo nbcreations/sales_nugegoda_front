@@ -225,7 +225,10 @@
                                 });
 
                             } else {
-                                console.log(data);
+                                iziToast.error({
+                                    title: 'Error',
+                                    message: data.message,
+                                });
                             }
                         },
                         error: function (jqXHR, textStatus, errorThrown) {

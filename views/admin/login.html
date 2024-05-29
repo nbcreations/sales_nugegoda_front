@@ -72,7 +72,7 @@
                     },
                     success: function (data) {
                         if (data.status === true || data.status === "true") {
-                            if(data.data === 1){
+                            if(data.data === 1 || data.data === 3){
                                 setTimeout(() => { location.href = '/orders'; }, 1000);
                             }else {
                                 setTimeout(() => { location.href = '/page1'; }, 1000);

@@ -1,3 +1,5 @@
+const {render_data} = require("./../services/render");
+
 const authorize = async ( req, res, next ) => {
 
     if ( req.headers.cookie === undefined ) {
@@ -15,6 +17,16 @@ const authorize = async ( req, res, next ) => {
     }
 
     req.authToken = result.data;
+
+    // Get userInformation
+    let userInformation = await checkUser(req.authToken);
+    if(!userInformation.status) {
+        console.error("Error getting user information");
+        res.redirect("/");
+        return;
+    }
+    req.userId = userInformation.data.id;
+    req.role = userInformation.data.role;
 
     next();
 
@@ -50,5 +62,16 @@ const getCookie = (cookie_name, cookie) => {
         }
     }
 };
+
+// This is for get user information from backend and check if cookie is valid for specific user
+const checkUser = async (token) => {
+    try {
+        let check = await render_data('/api/v1/user/check', token);
+        return check;
+    } catch ( err ) {
+        console.error( err );
+        return "";
+    }
+}
 
 module.exports = {authorize, authorize2};
